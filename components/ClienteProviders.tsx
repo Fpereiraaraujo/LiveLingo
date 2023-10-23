@@ -1,4 +1,4 @@
-"use cliente"
+"use client"
 
 import { SessionProvider } from "next-auth/react"
 
@@ -9,5 +9,5 @@ export default function ClienteProviders({
 }: {
     children: React.ReactNode;
 }) {
-    return <SessionProvider> {children} < SessionProvider />;
-}
+    return <SessionProvider>{children}</SessionProvider>
+} 

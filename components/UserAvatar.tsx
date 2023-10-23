@@ -9,9 +9,9 @@ function UserAvatar({
   image,
   className
 }: {
-  name: string;
-  image: string;
-  className?: string;
+  name?: string | null;
+  image?: string | null;
+  className?: string | null;
 }) {
 
   return (
@@ -19,7 +19,7 @@ function UserAvatar({
       {image && (
         <Image
           src={image}
-          alt={name}
+          alt={name || "User name"}
           width={40}
           height={40}
           referrerPolicy="no-referrer"
@@ -31,7 +31,7 @@ function UserAvatar({
         delayMs={1000}
         className="dark:bg-white dark:text-black text-lg">
         {name
-          ?.split("")
+          ?.split(" ")
           .map((n) => n[0])
           .join("")}
       </AvatarFallback>
