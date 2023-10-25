@@ -1,8 +1,10 @@
+
 import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import ClienteProviders from '@/components/ClienteProviders'
+import FirebaseAuthProvider from '@/components/FirebaseAuthProvider'
 
 
 
@@ -20,15 +22,17 @@ export default function RootLayout({
     <ClienteProviders>
       <html lang="en">
         <body className="flex flex-col min-h-screen">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange>
+          <FirebaseAuthProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange>
 
-            <Header />
-            {children}
-          </ThemeProvider>
+              <Header />
+              {children}
+            </ThemeProvider>
+          </FirebaseAuthProvider>
         </body>
       </html>
     </ClienteProviders>
