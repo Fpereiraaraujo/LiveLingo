@@ -18,7 +18,9 @@ async function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900">
       <nav className='flex flex-col md:flex-row items-center p-5 pl-2 justify-between bg-white dark:bg-gray-900 max-w-7xl mx-auto'>
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
         <div className=' flex items-center justify-end space-x-4'>
 
           {session ? (
@@ -26,7 +28,7 @@ async function Header() {
               <Link href={"/chat"}>
                 <MessagesSquareIcon className='text-black dark:text-white' />
               </Link>
-              <CreateChatButton/>
+              <CreateChatButton />
             </>
           ) : (
             <Link href='/pricing'>Pricing</Link>
