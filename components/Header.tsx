@@ -8,6 +8,7 @@ import { getServerSession } from "next-auth"
 import { MessagesSquareIcon } from 'lucide-react'
 import Link from 'next/link'
 import CreateChatButton from './CreateChatButton'
+import UpgradeButton from './UpgradeButton'
 
 
 async function Header() {
@@ -43,6 +44,7 @@ async function Header() {
 
         </div>
       </nav>
+      <UpgradeButton/>
 
     </header >
   )
