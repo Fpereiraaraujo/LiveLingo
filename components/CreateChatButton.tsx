@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from "uuid"
 import { serverTimestamp, setDoc } from "firebase/firestore";
 import { addChatRef } from "@/lib/converters/ChatMembers";
 
+
 function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
     const { data: session } = useSession();
     const router = useRouter();
@@ -31,7 +32,7 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
 
         //Check if user is pro and limit them creating a new chat
         //_______________________________________________________
-        const chatId = uuidv4()
+        const chatId = uuidv4();
 
 
         await setDoc(addChatRef(chatId, session.user.id), {
@@ -39,14 +40,33 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
             email: session.user.email!,
             timestamp: serverTimestamp(),
             isAdmin: true,
-            chatId: chatId, 
+            chatId: chatId,
             image: session.user.image || "",
+        }).then(() => {
+            toast({
+                title: "success",
+                description: "your chat has been created",
+                className:"bg-green-400",
+                duration: 2000,
+            })
+            router.push(`/chat/${chatId}`);
+
+        }).catch((error) => {
+            console.error(error);
+            toast({
+                title: "Error",
+                description: "There was an error creating you chat!",
+                variant: "destructive",
+
+            })
+        }).finally(() => {
+            seLoading(false)
         });
 
 
 
 
-        router.push(`/chat/abc`)
+   
     }
     if (isLarge)
         return (
