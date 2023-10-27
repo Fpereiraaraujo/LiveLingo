@@ -18,6 +18,7 @@ import { Button } from "./ui/button"
 import { useSubscriptionStore } from "@/store/store";
 import { StarIcon } from "lucide-react";
 import LoadingSpinner from "./LoadingSpinner";
+import ManageAccountButton from "./ManageAccountButton";
 
 
 function UserButton({ session }: { session: Session | null }) {
@@ -47,7 +48,7 @@ function UserButton({ session }: { session: Session | null }) {
                     )}
 
 
-                    {subscription?.role === null && (
+                    {subscription?.role === "pro" && (
                         <>
                             <DropdownMenuLabel className="text-xs flex items-center justify-center space-x-1 text-[#E935C1] animate-pulse">
                                 <StarIcon fill="#E935C1" />
@@ -56,14 +57,10 @@ function UserButton({ session }: { session: Session | null }) {
                             </DropdownMenuLabel>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem>
-                                Manage
+                                <ManageAccountButton />
                             </DropdownMenuItem>
                         </>
                     )}
-
-
-
-
                     <DropdownMenuItem onClick={() => signOut()}>Sign Out</DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>

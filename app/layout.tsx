@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import ClienteProviders from '@/components/ClienteProviders'
 import FirebaseAuthProvider from '@/components/FirebaseAuthProvider'
 import SubscriptionProvider from '@/components/SubscriptionProvider'
+import { Toaster } from '@/components/ui/toaster'
 
 
 
@@ -33,6 +34,7 @@ export default function RootLayout({
 
               <Header />
               {children}
+              <Toaster/>
             </ThemeProvider>
             </SubscriptionProvider>
           </FirebaseAuthProvider>
