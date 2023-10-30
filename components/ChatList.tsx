@@ -21,7 +21,7 @@ async function ChatList() {
   }));
 
   return (
-  <ChatListRows initialChats={initialChats} />
+    <ChatListRows initialChats={initialChats} />
   );
 
 

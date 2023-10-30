@@ -1,17 +1,21 @@
+'use client'
+
 import { ChatMembers, chatMembersCollectionsGroupRef, chatMembersRef } from "@/lib/converters/ChatMembers"
 import { MessageSquare } from "lucide-react";
-import { useSession } from "next-auth/react"
+
 import { useCollectionData } from "react-firebase-hooks/firestore"
 import CreateChatButton from "./CreateChatButton";
 import ChatListRow from "./ChatListRow";
+import { useSession } from "next-auth/react";
 
 
 function ChatListRows({ initialChats }: { initialChats: ChatMembers[] }) {
-    const { data: session } = useSession(); y
+    const { data: session } = useSession(); 
 
 
     const [members, loading, error] = useCollectionData<ChatMembers>(
         session && chatMembersCollectionsGroupRef(session?.user.id),
+
         {
             initialValue: initialChats
         }

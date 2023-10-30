@@ -4,7 +4,7 @@ import { create } from 'zustand';
 import { Subscription } from '@/types/Subscription';
 
 
-export type LanguageSupported =
+export type LanguagesSupported =
     | "en"
     | "de"
     | "fr"
@@ -17,7 +17,7 @@ export type LanguageSupported =
     | "ar";
 
 
-export const LanguageSupportedMap: Record<LanguageSupported, string> = {
+export const languagesSupportedMap: Record<LanguagesSupported, string> = {
     en: "english",
     de: "German",
     fr: "French",
@@ -30,6 +30,38 @@ export const LanguageSupportedMap: Record<LanguageSupported, string> = {
     ar: "Arabic",
 
 }
+
+const LANGUAGES_IN_FREE = 2
+
+interface LanguageState {
+    language: LanguagesSupported;
+    setLanguage: (langauge: LanguagesSupported) => void;
+    getLanguages: (isPro: boolean) => LanguagesSupported[];
+    getNoSupportedLanguage: (isPro: boolean) => LanguagesSupported[];
+}
+
+
+export const useLanguageStore = create<LanguageState>()((set, get) => ({
+    language: "en",
+    setLanguage: (language: LanguagesSupported) => set({ language }),
+    getLanguages: (isPro: boolean) => {
+        if (isPro)
+            return Object.keys(languagesSupportedMap) as LanguagesSupported[];
+
+
+            return Object.keys(languagesSupportedMap).slice(
+                0,
+                LANGUAGES_IN_FREE
+            ) as LanguagesSupported[];
+    },
+    getNoSupportedLanguage:(isPro:boolean)=>{
+        if(isPro) return[];
+        return Object.keys(languagesSupportedMap).slice(2) as LanguagesSupported[];
+    },
+})
+
+
+
 
 
 interface SubscriptionState {
