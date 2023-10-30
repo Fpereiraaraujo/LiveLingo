@@ -18,7 +18,7 @@ export type LanguagesSupported =
 
 
 export const languagesSupportedMap: Record<LanguagesSupported, string> = {
-    en: "english",
+    en: "English",
     de: "German",
     fr: "French",
     es: "Spanish",

@@ -32,6 +32,7 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
 
         //Check if user is pro and limit them creating a new chat
         //_______________________________________________________
+        
         const chatId = uuidv4();
 
 

@@ -7,16 +7,20 @@ import { Skeleton } from "./ui/skeleton";
 import UserAvatar from "./UserAvatar";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useLanguageStore } from "@/store/store";
 
 function ChatListRow({ chatId }: { chatId: string }) {
     const [messages, loading, error] = useCollectionData<Message>(
         limitedSortedMessagesRef(chatId)
     );
+    const language = useLanguageStore((state) => state.language)
+
     function prettyUUID(n = 4) {
         return chatId.substring(0, n)
     }
     const { data: session } = useSession()
     const router = useRouter();
+
 
     const row = (message?: Message) => (
         <div key={chatId} onClick={() => router.push(`/chat/${chatId}`)} className="flex p-5 items-center space-x-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-700">
@@ -26,14 +30,14 @@ function ChatListRow({ chatId }: { chatId: string }) {
 
             <div className="flex-1">
                 <p className="font-bold">
-                    {message && "New Chat"}
+                    {!message && "New Chat"}
                     {message &&
                         [message?.user.name || session?.user.name].toString().split(" ")[0]}
                 </p>
 
 
                 <p className="text-gray-400 line-clamp-1">
-                    {message?.translated?.["en"] || "Get The conversation started..."}
+                    {message?.translated?.[language] || "Get The conversation started..."}
                 </p>
             </div>
             <div className="text-xs text-gray-400 text-right">
