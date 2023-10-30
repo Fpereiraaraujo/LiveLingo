@@ -58,7 +58,7 @@ export const useLanguageStore = create<LanguageState>()((set, get) => ({
         if(isPro) return[];
         return Object.keys(languagesSupportedMap).slice(2) as LanguagesSupported[];
     },
-})
+}))
 
 
 
