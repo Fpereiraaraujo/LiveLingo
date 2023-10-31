@@ -35,7 +35,7 @@ const LANGUAGES_IN_FREE = 2
 
 interface LanguageState {
     language: LanguagesSupported;
-    setLanguage: (langauge: LanguagesSupported) => void;
+    setLanguage: (language: LanguagesSupported) => void;
     getLanguages: (isPro: boolean) => LanguagesSupported[];
     getNoSupportedLanguage: (isPro: boolean) => LanguagesSupported[];
 }
@@ -56,7 +56,7 @@ export const useLanguageStore = create<LanguageState>()((set, get) => ({
     },
     getNoSupportedLanguage:(isPro:boolean)=>{
         if(isPro) return[];
-        return Object.keys(languagesSupportedMap).slice(2) as LanguagesSupported[];
+        return Object.keys(languagesSupportedMap).slice(LANGUAGES_IN_FREE) as LanguagesSupported[];
     },
 }))
 

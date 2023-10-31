@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod";
 import { addDoc, getDocs, serverTimestamp } from "firebase/firestore";
 import { LimitedMessagesRef, User, messagesRef } from "@/lib/converters/Message";
-import { Subscript, SubscriptIcon } from "lucide-react";
+
 import { useRouter } from "next/navigation";
 import { useSubscriptionStore } from "@/store/store";
 import { useToast } from "./ui/use-toast";
@@ -27,8 +27,9 @@ const formSchema = z.object({
 function ChatInput({ chatId }: { chatId: string }) {
     const { data: session } = useSession();
     const router = useRouter();
-    const subscription = useSubscriptionStore((state) => state.subscription)
     const { toast } = useToast();
+    
+    const subscription = useSubscriptionStore((state) => state.subscription)
 
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -84,11 +85,14 @@ function ChatInput({ chatId }: { chatId: string }) {
 
         addDoc(messagesRef(chatId), {
             input: values.input,
-            timeStamp: serverTimestamp(),
+            timestamp: serverTimestamp(),
             user: userToStore,
-        })
+        });
+
+        form.reset()
     }
 
+    
 
     return (
         <div className="sticky button-0">

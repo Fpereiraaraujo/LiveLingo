@@ -1,9 +1,9 @@
 
 'use client'
 
+import { Skeleton } from "./ui/skeleton";
 import { Message, limitedSortedMessagesRef } from "@/lib/converters/Message";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { Skeleton } from "./ui/skeleton";
 import UserAvatar from "./UserAvatar";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -15,15 +15,19 @@ function ChatListRow({ chatId }: { chatId: string }) {
     );
     const language = useLanguageStore((state) => state.language)
 
-    function prettyUUID(n = 4) {
-        return chatId.substring(0, n)
-    }
+   
     const { data: session } = useSession()
     const router = useRouter();
 
+    function prettyUUID(n = 4) {
+        return chatId.substring(0, n)
+    }
+
 
     const row = (message?: Message) => (
-        <div key={chatId} onClick={() => router.push(`/chat/${chatId}`)} className="flex p-5 items-center space-x-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-700">
+        <div key={chatId} 
+        onClick={() => router.push(`/chat/${chatId}`)} 
+        className="flex p-5 items-center space-x-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-700">
             <UserAvatar
                 name={message?.user.name || session?.user.name}
                 image={message?.user.image || session?.user.image} />
@@ -43,7 +47,7 @@ function ChatListRow({ chatId }: { chatId: string }) {
             <div className="text-xs text-gray-400 text-right">
                 <p className="mb-auto">
                     {message
-                        ? new Date(message.timeStamp).toLocaleDateString()
+                        ? new Date(message.timestamp).toLocaleDateString()
                         : "no Message Yet"}
                 </p>
                 <p className="">Chat #{prettyUUID()}</p>
@@ -63,7 +67,7 @@ function ChatListRow({ chatId }: { chatId: string }) {
                 </div>
             )}
             {messages?.length === 0 && !loading && row()}
-            {messages?.map((messages) => row(messages))}
+            {messages?.map((message) => row(message))}
 
         </div>
     )

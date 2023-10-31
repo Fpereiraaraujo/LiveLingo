@@ -9,7 +9,7 @@ import { MessagesSquareIcon } from 'lucide-react'
 import Link from 'next/link'
 import CreateChatButton from './CreateChatButton'
 import UpgradeButton from './UpgradeButton'
-import LanguaguesSelect from './LanguaguesSelect'
+import LanguagueSelect from './LanguagueSelect'
 
 
 async function Header() {
@@ -22,7 +22,7 @@ async function Header() {
       <nav className='flex flex-col md:flex-row items-center p-5 pl-2 justify-between bg-white dark:bg-gray-900 max-w-7xl mx-auto'>
           
         <div className='flex flex-1 items-center justify-end space-x-4'>
-          <LanguaguesSelect />
+          <LanguagueSelect />
 
           {session ? (
             <>

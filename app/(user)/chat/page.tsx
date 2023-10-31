@@ -6,7 +6,7 @@ type Props = {
         error: string
     }
 }
-function ChatPage({ searchParams: { error } }: Props) {
+function ChatsPage({ searchParams: { error } }: Props) {
     return (
         <div>
             <ChatList/>
@@ -14,4 +14,4 @@ function ChatPage({ searchParams: { error } }: Props) {
     )
 }
 
-export default ChatPage
+export default ChatsPage

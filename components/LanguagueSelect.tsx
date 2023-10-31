@@ -11,7 +11,7 @@ import LoadingSpinner from "./LoadingSpinner";
 import Link from "next/link";
 
 
-function LanguaguesSelect() {
+function LanguagueSelect() {
     const [language, setLanguage, getLanguages, getNotSupportedLanguages] = useLanguageStore((state) => [
         state.language,
         state.setLanguage,
@@ -63,4 +63,4 @@ function LanguaguesSelect() {
     )
 }
 
-export default LanguaguesSelect
+export default LanguagueSelect
