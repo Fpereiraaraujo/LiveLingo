@@ -26,9 +26,9 @@ function ChatMembersBadges({ chatId }: { chatId: string }) {
             <Badge
               variant="secondary"
               key={member.email}
-              className="h-14 p-5 pl-2 pr-5 flex space-x-2">
+              className="items-center rounded-full border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 h-14 p-5 pl-2 pr-5 flex space-x-2">
 
-              <div className="fle items-center space-x-2">
+              <div className="flex items-center space-x-2">
                 <UserAvatar name={member.email} image={member.image} />
               </div>
 

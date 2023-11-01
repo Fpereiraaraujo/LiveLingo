@@ -33,9 +33,10 @@ function ChatMessages({ chatId, initialMessages, session }: {
 
 
     return (
-        <div className='p-5'>
+        <div className='flex-1'>
+        <div className='p-10 px-16'>
             {!loading && messages?.length === 0 && (
-                <div className='flex flex-col text-center justify-center items-center p-20 rounded-xl space-y-2 bg-indigo-400 text-white font-extralight'>
+                <div className='flex flex-col justify-center items-center p-20 rounded-xl space-y-2 px-6 bg-indigo-400 text-white font-extralight'>
                     <MessageCircleIcon className="h-10 w-10" />
 
                     <h2>
@@ -81,6 +82,7 @@ function ChatMessages({ chatId, initialMessages, session }: {
             <div ref={messagesEndRef}>
                 
             </div>
+        </div>
         </div>
     )
 }

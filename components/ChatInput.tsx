@@ -90,15 +90,15 @@ function ChatInput({ chatId }: { chatId: string }) {
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="flex space-x-2 rounde-t-xl max-w-4xl mx-auto bg-white border dark:bg-slate-800"
+                    className="flex space-x-2 p-2 rounded-t-xl max-w-4xl mx-auto bg-white border dark:bg-slate-800"
                 >
                     <FormField
                         control={form.control}
                         name="input"
                         render={({ field }) => (
-                            <FormItem className="flex-1">
+                            <FormItem className="space-y-2 flex-1">
                                 <FormControl>
-                                    <Input className="border-none bg-transparent dark:placeholder::text-white/70" placeholder="Enter message in Any Language"
+                                    <Input className="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-none bg-transparent dark:placeholder:text-white/70" placeholder="Enter message in Any Language"
                                         {...field} />
                                 </FormControl>
                                 <FormMessage />
