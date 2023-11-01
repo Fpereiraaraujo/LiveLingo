@@ -43,7 +43,6 @@ const messageConverter: FirestoreDataConverter<Message> = {
             translated: data.translated,
             user: data.user,
         }
-
     },
 };
 

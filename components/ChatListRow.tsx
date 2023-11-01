@@ -14,7 +14,6 @@ function ChatListRow({ chatId }: { chatId: string }) {
         limitedSortedMessagesRef(chatId)
     );
     const language = useLanguageStore((state) => state.language)
-
    
     const { data: session } = useSession()
     const router = useRouter();
