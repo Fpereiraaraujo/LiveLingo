@@ -78,17 +78,9 @@ function ChatMessages({ chatId, initialMessages, session }: {
                     </div>
                 )
             })}
-
-
-
-
-
-
-
-
-
-
-
+            <div ref={messagesEndRef}>
+                
+            </div>
         </div>
     )
 }
