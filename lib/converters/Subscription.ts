@@ -3,10 +3,6 @@ import { Subscription } from "@/types/Subscription";
 import { DocumentData, FirestoreDataConverter, QueryDocumentSnapshot, SnapshotOptions, collection } from "firebase/firestore";
 
 
-
-
-
-
 const subscriptionConverter: FirestoreDataConverter<Subscription> = {
     toFirestore: function (Subscription: Subscription): DocumentData {
         return {

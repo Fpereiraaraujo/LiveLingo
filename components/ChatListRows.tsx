@@ -10,7 +10,7 @@ import { useSession } from "next-auth/react";
 
 
 function ChatListRows({ initialChats }: { initialChats: ChatMembers[] }) {
-    const { data: session } = useSession(); 
+    const { data: session } = useSession();
 
 
     const [members, loading, error] = useCollectionData<ChatMembers>(
