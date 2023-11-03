@@ -20,8 +20,7 @@ function UpgradeButton() {
             onClick={() => router.push('/register')}
             className="w-full rounded-none bg-gradient-to-r from-[#7777D6] to-[#E935C1]
         text-center text-white px-5 py-2 hover:from-[#7775D9]  hover:to-[#E935C1] hover:shadow-md hover:opacity-75 transition-all">
-            Upgrade to Pro to Unlock all features
-
+            Aprimore para a versão PRO para Desbloquear todos os recursos.
         </Button>
     )
 }

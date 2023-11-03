@@ -5,33 +5,33 @@ import CheckoutButton from "./CheckoutButton"
 
 const tiers = [
   {
-    name: "Started",
+    name: "Inicial",
     id: null,
     href: "#",
     priceMonthly: null,
-    description: "get chatting right away anyone,anywhere",
+    description: "Comece a conversar imediatamente, com qualquer pessoa, em qualquer lugar.",
     features: [
-      "20 message Chat Limit in Chats",
-      "2 Participant limit in chat",
-      "3 Chat Rooms Limit",
-      "Supports 2 languages",
-      "48-hour support response time",
+      "Limite de 20 mensagens por chat",
+      "Limite de 2 participantes por chat",
+      "Limite de 3 salas de chat",
+      "Suporta 2 idiomas",
+      "Tempo de resposta de suporte de 48 horas"
     ],
   },
   {
-    name: "Pro",
+    name: "PRO",
     id: "pro",
     href: "#",
-    priceMonthly: "$10",
-    description: "Unlock the full potencial with pro",
+    priceMonthly: "R$ 3",
+    description: "Desbloqueie o potencial completo com a versão Pro",
     features: [
-      "Unlimited message in Chats",
-      "Unlimited Participants in Chats",
-      "Unlimited Chat Rooms",
-      "Supports up to 2 languages",
-      "Multimedia support in chats (coming soon)",
-      "1-hour, dedicated support response time",
-      "early acess to new Features",
+      "Chat ilimitado em mensagens",
+      "Participantes ilimitados em chats",
+      "Salas de chat ilimitadas",
+      "Suporta até 10 idiomas",
+      "Suporte a multimídia em chats (em breve)",
+      "Tempo de resposta dedicado de 1 hora",
+      "Acesso antecipado a novos recursos."
     ],
   }
 ]
@@ -54,7 +54,7 @@ function PrincingCards({ redirect }: { redirect: boolean }) {
                     <span className="text-5xl font-bold otracking-tight text-gray-900">
                       {tier.priceMonthly}
                     </span>
-                    <span className="text-base font-semibold leading-7 text-gray-600">/month
+                    <span className="text-base font-semibold leading-7 text-gray-600">/Mês
                     </span>
                   </>
                 ) : (
@@ -78,7 +78,7 @@ function PrincingCards({ redirect }: { redirect: boolean }) {
               <Link href="/register"
                 className="mt-8 block rounded-md bg-indigo-600 px-1/5 py-2 text-center text-sm font-semibold leading-6 text-white shadow-sn hover:bg-indigo-500 focus-visible:outline cursor-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
               cursor-pointer disable:opacity-80" >
-                Get Started
+                Começar
               </Link>
             ) : (
               tier.id && <CheckoutButton />

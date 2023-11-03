@@ -39,21 +39,21 @@ function ChatListRow({ chatId }: { chatId: string }) {
 
             <div className="flex-1">
                 <p className="font-bold">
-                    {!message && "New Chat"}
+                    {!message && "Novo Chat"}
                     {message &&
                         [message?.user.name || session?.user.name].toString().split(" ")[0]}
                 </p>
 
 
                 <p className="text-gray-400 line-clamp-1">
-                    {message?.translated?.[language] || "Get The conversation started..."}
+                    {message?.translated?.[language] || "Inicie a conversa..."}
                 </p>
             </div>
             <div className="text-xs text-gray-400 text-right">
                 <p className="mb-auto">
                     {message
                         ? new Date(message.timestamp).toLocaleDateString()
-                        : "no Message Yet"}
+                        : "Sem menssagens ainda"}
                 </p>
                 <p className="">Chat #{prettyUUID()}</p>
             </div>

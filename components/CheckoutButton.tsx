@@ -70,7 +70,7 @@ function CheckoutButton() {
         <>
           <hr className="mt-5" />
           <p className="pt-5 text-center text-xs text-indigo-600">
-            You are subscribed to Pro
+          Você está inscrito na versão PRO
           </p>
         </>
       )}
@@ -82,7 +82,7 @@ function CheckoutButton() {
         ) : isLoadingSubscription || loading ? (
           <LoadingSpinner />
         ) : (
-          <button onClick={() => createCheckoutSession()}>Sing Up </button>
+          <button onClick={() => createCheckoutSession()}>Fazer Upgrade </button>
         )}
 
       </div>

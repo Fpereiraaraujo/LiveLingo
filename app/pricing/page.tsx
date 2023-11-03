@@ -5,16 +5,16 @@ function Pricingpage() {
         <div className="isolate overflow-hidden bg-gray-900">
             <div className="mx-auto max-w-7xl px-6 pb-96 pt-24 text-center sm:pt-32 lg:px-8">
                 <div className="mx-auto max-w-4xl">
-                    <h2 className="text-base font-semibold leading-7 text-indigo-400">Pricing</h2>
+                    <h2 className="text-base font-semibold leading-7 text-indigo-400">Preços</h2>
                     <p className=" mt-2 tex-4xl font-bold tracking-tight text-white sm:text-5xl">
-                        The Right price for you,{" "}
+                    O preço certo para você, {" "}
                         <br className="hidden sm:inline lg:hidden" />
-                        Whoever you are
+                        Seja quem você for.
                     </p>
                 </div>
                 <div className="relative mt-6">
                     <p className="mx-auto max-w-2xl text-lg leading-8 text-white/60">
-                        Were 90% sure we have a plan match 100% of you need
+                    Estamos 90% certos de que temos um plano que atende a 100% das suas necessidades.
                     </p>
                     <svg viewBox="0 0 1208 1024"
                         className="absolute -top-10 left-1/2 -z-10 h-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-12 xl:top-0">

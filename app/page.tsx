@@ -27,19 +27,19 @@ export default async function Home() {
           <div className='mx-auto max-w-7xl px-6 lg:px-6'>
             <div className='mx-auto max-w-2xl text-center '>
               <h1 className='text-4xl font-bold tracking-tight sm:text-6xl'>
-                Chat With Anyone,Anywhere
+              Conectando o Mundo, Palavra por Palavra
               </h1>
-              <p className='mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300'>
-                You Speak your len....{" "}
+              <p className='mt-6 text-lg  flex flex-col leading-8 text-gray-600 dark:text-gray-300'>
+              LiveLingo é um aplicativo de tradução em tempo real que traduz mensagens instantaneamente, permitindo comunicação sem barreiras em diferentes idiomas.{" "}
                 <span className='text-indigo-600 dark:text-indigo-500'>
-                  Let AI handler the translation
+                Deixe a IA cuidar da tradução
                 </span>
               </p>
               <div className='mt-10 flex items-center justify-center gap-x-6'>
-                <Link href="/chat" className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 focus:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>Get Started
+                <Link href="/chat" className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 focus:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>Começar
                 </Link>
                 <Link href="/pricing" className='text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300'>
-                  View Pricing <span aria-hidden="true">-</span>
+                  Ver Preços <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>
