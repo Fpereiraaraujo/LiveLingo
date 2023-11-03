@@ -32,13 +32,36 @@ function DeleteChatButton({ chatId }: { chatId: string }) {
     const router = useRouter();
     const adminId = useAdminId({ chatId })
 
-    const handleDelete = async () =>{
+    const handleDelete = async () => {
         toast({
-            title:"Deleting chat",
-            description:"Please wait while we delte the chat...",
+            title: "Deleting chat",
+            description: "Please wait while we delte the chat...",
         })
-        console.log("Deleting::",chatId)
+        console.log("Deleting::", chatId)
 
+        await fetch("/api/chat/delete", {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({ chatId: chatId }),
+        }).then((res) => {
+            toast({
+                title: "Success",
+                description: "Your chat has been deleted",
+                className: "bg-green-600 text-white",
+                duration: 3000,
+            });
+            router.replace(`/chat`)
+        }).catch((err) => {
+            console.error(err.message);
+            toast({
+                title: "Error",
+                description: "There was an error deleting your chat!",
+                variant: "destructive",
+            });
+        })
+            .finally(() => setOpen(false));
     }
 
 
@@ -69,7 +92,7 @@ function DeleteChatButton({ chatId }: { chatId: string }) {
             </Dialog>
         )
     )
-    
+
 }
 
 export default DeleteChatButton

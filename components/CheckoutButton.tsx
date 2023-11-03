@@ -60,18 +60,30 @@ function CheckoutButton() {
 
   }
   return (
+
+
+
     <div className='flex flex-col space-y-2' >
       {/*if subscribed show me user in subscribed */}
+
+      {isSubscribed && (
+        <>
+          <hr className="mt-5" />
+          <p className="pt-5 text-center text-xs text-indigo-600">
+            You are subscribed to Pro
+          </p>
+        </>
+      )}
       <div className='mt-8 block rounded-md bg-indigo-600 px-3.5 py-2 text-center text-sm font-semibold leading-6 text-white shadow-sn hover:bg-indigo-500 focus-visible:outline cursor-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
     cursor-pointer disable:opacity-80 disablebg-indigo-600/50 disable:text-white disable:cursor-default'>
 
-      {isSubscribed? (
-        <ManageAccountButton/>
-      ):isLoadingSubscription || loading ? (
-        <LoadingSpinner/>
-      ):(
-        <button onClick={() => createCheckoutSession()}>Sing Up </button>
-         )}
+        {isSubscribed ? (
+          <ManageAccountButton />
+        ) : isLoadingSubscription || loading ? (
+          <LoadingSpinner />
+        ) : (
+          <button onClick={() => createCheckoutSession()}>Sing Up </button>
+        )}
 
       </div>
     </div>

@@ -1,1 +1,0 @@
-import { adminDb } from "@/firebase-admin";
