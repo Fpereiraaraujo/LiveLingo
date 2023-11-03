@@ -18,6 +18,7 @@ import { Button } from "./ui/button";
 import { PlusCircleIcon } from "lucide-react";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
+import ShereLink from "./ShereLink";
 
 
 
@@ -162,10 +163,10 @@ function InviteUser({ chatId }: { chatId: string }) {
                     </DialogContent>
                 </Dialog>
 
-                {/*<ShereLink
-                    isOpne={openInviteLink}
-                    setidOpen={setOpenInviteLink}
-                                    chatId={chatId} />*/}
+                <ShereLink
+                    isOpen={openInviteLink}
+                    setIsOpen={setOpenInviteLink}
+                                    chatId={chatId} />
             </>
         )
     );
