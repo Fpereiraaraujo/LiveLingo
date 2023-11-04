@@ -41,42 +41,42 @@ function ShereLink({
     async function copyClipboard() {
         try {
             await navigator.clipboard.writeText(linkToChat);
-            console.log("Text copied to clipboard");
+            console.log("Texto copiado para a área de transferência.");
 
             toast({
-                title: "copied sucessfully",
+                title: "Copiado com sucesso",
                 description:
-                    "share this to the person you want to chat with! (NOTE:they mus be added to the chat to acess it!)",
+                    "Compartilhe isso com a pessoa com quem você deseja conversar! (OBSERVAÇÃO: eles devem ter sido adicionados ao chat para acessá-lo!",
                 className: "bg-green-600 text-white"
             });
         } catch (err) {
-            console.log("failed to copy text", err)
+            console.log("Falha ao copiar link", err)
         }
 
 
     }
     return (
-        
+
         <Dialog
             onOpenChange={(open) => setIsOpen(open)}
             open={isOpen}
             defaultOpen={isOpen}
-            >
+        >
 
             <DialogTrigger asChild>
-                <Button variant="outline"> 
+                <Button variant="outline">
                     <Copy className="mr-2" />
-                    Share Link
-                </Button>   
+                    Compartilhar Link
+                </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
                 <DialogHeader>
                     <DialogTitle>
-                        Share link
+                        Compartilhar Link
                     </DialogTitle>
                     <DialogDescription>
-                        any user who has been{" "}
-                        <span className="text-indigo-600 font-bold">granted acess</span>{" "} can user this link
+                        Qualquer usuário que tenha sido{" "}
+                        <span className="text-indigo-600 font-bold">Concedido o acesso</span>{" "} Pode usar esse link
                     </DialogDescription>
                 </DialogHeader>
                 <div className="flex item-center space-x-2">
@@ -91,14 +91,14 @@ function ShereLink({
                         onClick={() => copyClipboard()}
                         size="sm"
                         className="px-3">
-                        <span className="sr-only">Copy</span>
-                        <Copy className="h-4 w-4"/>
+                        <span className="sr-only">Copiar</span>
+                        <Copy className="h-4 w-4" />
                     </Button>
                 </div>
                 <DialogFooter className="sm:justify-start">
                     <DialogClose asChild>
                         <Button type="button" variant="secondary">
-                            Close
+                            Fechar
                         </Button>
                     </DialogClose>
                 </DialogFooter>

@@ -4,7 +4,7 @@ import { generatePortalLink } from "@/actions/GeneratePortalLinks"
 function ManageAccountButton() {
   return (
     <form action={generatePortalLink}>
-        <button type="submit">Manage Billing
+        <button type="submit">Gerenciar conta
 
         </button>
     </form>

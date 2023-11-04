@@ -34,55 +34,55 @@ function ChatMessages({ chatId, initialMessages, session }: {
 
     return (
         <div className='flex-1'>
-        <div className='p-10 px-16'>
-            {!loading && messages?.length === 0 && (
-                <div className='flex flex-col justify-center items-center p-20 rounded-xl space-y-2 px-6 bg-indigo-400 text-white font-extralight'>
-                    <MessageCircleIcon className="h-10 w-10" />
+            <div className='p-10 px-16'>
+                {!loading && messages?.length === 0 && (
+                    <div className='flex flex-col justify-center items-center p-20 rounded-xl space-y-2 px-6 bg-indigo-400 text-white font-extralight'>
+                        <MessageCircleIcon className="h-10 w-10" />
 
-                    <h2>
-                        <span className='font-bold'>Invite a friend</span> &{" "}
-                        <span className='font-bold'>Send your firt message in ANY lenguage</span>{" "}
-                        Below to started
-                    </h2>
-                    <p>The AI will auto-detect & translate it all for you</p>
-                </div>
-            )}
+                        <h2>
+                            <span className='font-bold'>Convide um amigo.</span> &{" "}
+                            <span className='font-bold'>Envie sua primeira mensagem em QUALQUER idioma</span>{" "}
 
-            {messages?.map((message) => {
-                const isSender = message.user.id === session?.user.id;
-
-
-
-                return (
-                    <div key={message.id}
-                        className='flex my-2 items-end'>
-                        <div className={`flex flex-col relative space-y-2 p-4 w-fit line-clamp-1 mx-2 rounded-lg ${isSender
-                            ? "ml-auto bg-violet-600 text-white rounded-br-none"
-                            : "bg-gray-100 dark-text-gray-100 dark:bg-slate-700 rounded-bl-none"
-                            }`}>
-
-                            <p className={`text-xs italic font-extralight line-clamp-1 ${isSender ? "text-right" : "text-left"
-                                }`}>
-                                {message.user.name.split(" ")[0]}
-                            </p>
-
-                            <div className='flex space-x-2'>
-                                <p>{message.translated?.[language] || message.input}</p>
-                                {!message.translated && <LoadingSpinner />}
-                            </div>
-                        </div>
-
-                        <UserAvatar
-                            name={message.user.name}
-                            image={message.user.image}
-                            className={`${!isSender && "-order-1"}`} />
+                        </h2>
+                        <p>A IA irá detectar automaticamente e traduzir tudo para você</p>
                     </div>
-                )
-            })}
-            <div ref={messagesEndRef}>
-                
+                )}
+
+                {messages?.map((message) => {
+                    const isSender = message.user.id === session?.user.id;
+
+
+
+                    return (
+                        <div key={message.id}
+                            className='flex my-2 items-end'>
+                            <div className={`flex flex-col relative space-y-2 p-4 w-fit line-clamp-1 mx-2 rounded-lg ${isSender
+                                ? "ml-auto bg-violet-600 text-white rounded-br-none"
+                                : "bg-gray-100 dark-text-gray-100 dark:bg-slate-700 rounded-bl-none"
+                                }`}>
+
+                                <p className={`text-xs italic font-extralight line-clamp-1 ${isSender ? "text-right" : "text-left"
+                                    }`}>
+                                    {message.user.name.split(" ")[0]}
+                                </p>
+
+                                <div className='flex space-x-2'>
+                                    <p>{message.translated?.[language] || message.input}</p>
+                                    {!message.translated && <LoadingSpinner />}
+                                </div>
+                            </div>
+
+                            <UserAvatar
+                                name={message.user.name}
+                                image={message.user.image}
+                                className={`${!isSender && "-order-1"}`} />
+                        </div>
+                    )
+                })}
+                <div ref={messagesEndRef}>
+
+                </div>
             </div>
-        </div>
         </div>
     )
 }

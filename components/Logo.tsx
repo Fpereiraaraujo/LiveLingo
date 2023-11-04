@@ -18,7 +18,7 @@ function Logo() {
         <Image priority
           src={LOGOLINGO}
           alt="logo"
-          className="dark:filter dark:invert  h-32 w-32" />
+          className="dark:filter dark:invert  h-44 w-44" />
       </AspectRatio>
     </div >
   )

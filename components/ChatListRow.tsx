@@ -53,7 +53,7 @@ function ChatListRow({ chatId }: { chatId: string }) {
                 <p className="mb-auto">
                     {message
                         ? new Date(message.timestamp).toLocaleDateString()
-                        : "Sem menssagens ainda"}
+                        : "Sem mensagens ainda"}
                 </p>
                 <p className="">Chat #{prettyUUID()}</p>
             </div>

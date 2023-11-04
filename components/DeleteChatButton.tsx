@@ -34,10 +34,10 @@ function DeleteChatButton({ chatId }: { chatId: string }) {
 
     const handleDelete = async () => {
         toast({
-            title: "Deleting chat",
-            description: "Please wait while we delte the chat...",
+            title: "Deletando chat",
+            description: "Por favor aguarde enquanto deletamos seu chat....",
         })
-        console.log("Deleting::", chatId)
+        console.log("Deletando::", chatId)
 
         await fetch("/api/chat/delete", {
             method: "DELETE",
@@ -47,8 +47,8 @@ function DeleteChatButton({ chatId }: { chatId: string }) {
             body: JSON.stringify({ chatId: chatId }),
         }).then((res) => {
             toast({
-                title: "Success",
-                description: "Your chat has been deleted",
+                title: "Sucesso",
+                description: "Seu chat foi deletado",
                 className: "bg-green-600 text-white",
                 duration: 3000,
             });
@@ -56,8 +56,8 @@ function DeleteChatButton({ chatId }: { chatId: string }) {
         }).catch((err) => {
             console.error(err.message);
             toast({
-                title: "Error",
-                description: "There was an error deleting your chat!",
+                title: "Erro",
+                description: "Houve um erro ao deletar o seu chat!",
                 variant: "destructive",
             });
         })
@@ -70,22 +70,22 @@ function DeleteChatButton({ chatId }: { chatId: string }) {
         session?.user.id === adminId && (
             <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
-                    <Button variant="destructive">Delete chat</Button>
+                    <Button variant="destructive">Deletar chat</Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md">
                     <DialogHeader>
-                        <DialogTitle>Are you sure?</DialogTitle>
+                        <DialogTitle>Tem certeza?</DialogTitle>
                         <DialogDescription>
-                            this will delete the chat for all users.
+                            Isso irá excluir o chat para todos os usuários.
                         </DialogDescription>
                     </DialogHeader>
 
                     <div className="grid grid-cols-2 space-x-2">
                         <Button variant={"destructive"} onClick={handleDelete}>
-                            Delete
+                            Deletar
                         </Button>
 
-                        <Button variant={"outline"} onClick={() => setOpen(false)}>Cancel
+                        <Button variant={"outline"} onClick={() => setOpen(false)}>Cancelar
                         </Button>
                     </div>
                 </DialogContent>

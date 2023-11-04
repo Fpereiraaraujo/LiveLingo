@@ -11,15 +11,15 @@ function ChatPermissionError() {
             <AlertTitle>Error</AlertTitle>
             <AlertDescription className="flex">
                 <p className="flex-1">
-                    You do not have permission to view this chat
+                    Você não tem permissão para visualizar este chat.
                     <br />
                     <span className="font-bold">
-                        Please ask the chat admin to add you to the chat
+                        Por favor, peça ao administrador do chat para te adicionar ao chat.
                     </span>
                 </p>
                 <Link href="chat" replace>
                     <Button variant="destructive">
-                        Dimiss
+                        Ignorar
                     </Button>
                 </Link>
             </AlertDescription>

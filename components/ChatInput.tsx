@@ -51,8 +51,8 @@ function ChatInput({ chatId }: { chatId: string }) {
 
         if (!isPro && messages >= 20) {
             toast({
-                title: "Free Plan Limited Exceeded",
-                description: "exceded the plan",
+                title: "Limite do Plano Gratuito Excedido",
+                description: "o plano gratuito foi excedido, faça upgrade para continuar usando",
                 variant: "destructive",
                 action: (
                     <ToastAction
@@ -98,14 +98,14 @@ function ChatInput({ chatId }: { chatId: string }) {
                         render={({ field }) => (
                             <FormItem className="space-y-2 flex-1">
                                 <FormControl>
-                                    <Input className="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-none bg-transparent dark:placeholder:text-white/70" placeholder="Enter message in Any Language"
+                                    <Input className="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-none bg-transparent dark:placeholder:text-white/70" placeholder="Digite em QUALQUER Idioma!!"
                                         {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                    <Button type="submit" className="bg-violet-600 text-white">Send
+                    <Button type="submit" className="bg-violet-600 text-white">Enviar
 
                     </Button>
                 </form>

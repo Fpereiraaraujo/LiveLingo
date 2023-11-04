@@ -27,8 +27,8 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
 
         setLoading(true);
         toast({
-            title: "Creating new chat...",
-            description: "hold tight while we create your new chat",
+            title: "Criando um novo chat...",
+            description: "Aguarde enquanto criamos o seu novo chat.",
             duration: 3000,
         });
 
@@ -42,14 +42,14 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
 
         if (!isPro && noOfChats >= 3) {
             toast({
-                title: "Free plan limit exceeded",
-                description: "you´ve exceeded the limit of chats for FREE plan. please upgrade to PRO to continue adding users to chats!",
+                title: "Limite do plano gratuito excedido.",
+                description: "Você excedeu o limite de chats do plano gratuito. Por favor, faça upgrade para o plano PRO para continuar adicionando usuários aos chats!",
                 variant: "destructive",
                 action: (
                     <ToastAction
                         altText="Upgrade"
                         onClick={() => router.push("/register")}>
-                        Upgrade To Pro
+                        Upgrade Para o PRO
                     </ToastAction>
                 ),
             });
@@ -69,8 +69,8 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
             image: session.user.image || "",
         }).then(() => {
             toast({
-                title: "success",
-                description: "your chat has been created",
+                title: "Sucesso",
+                description: "Seu chat foi criado.",
                 className: "bg-green-400",
                 duration: 2000,
             })
@@ -79,8 +79,8 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
         }).catch((error) => {
             console.error(error);
             toast({
-                title: "Error",
-                description: "There was an error creating you chat!",
+                title: "Erro",
+                description: "Houve um erro ao criar o seu chat!",
                 variant: "destructive",
 
             })
@@ -97,7 +97,7 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
         return (
             <div>
                 <Button variant={"default"} onClick={createNewChat}>
-                    {loading ? <LoadingSpinner /> : "create a New Chat"}
+                    {loading ? <LoadingSpinner /> : "Criar um Novo Chat"}
                 </Button>
             </div>
         )

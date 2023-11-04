@@ -50,8 +50,8 @@ function InviteUser({ chatId }: { chatId: string }) {
         if (!session?.user.id) return;
 
         toast({
-            title: "Sending Invite",
-            description: "Please wait while we send the invite"
+            title: "Enviar convite",
+            description: "Por favor aguarde enquanto enviamos o convite"
         });
 
 
@@ -63,14 +63,14 @@ function InviteUser({ chatId }: { chatId: string }) {
 
         if (!isPro && noOfUsersInChat >= 2) {
             toast({
-                title: "Free plan limit exceeded",
-                description: "you have exceed blablabla",
+                title: "Limite do plano gratuito excedido.",
+                description: "Você excedeu o limite de chats do plano gratuito. Por favor, faça upgrade para o plano PRO para continuar criando chats",
                 variant: "destructive",
                 action: (
                     <ToastAction
                         altText="Upgrade"
                         onClick={() => router.push("/register")}>
-                        Upgrade to PRO
+                        Upgrade para o PRO
                     </ToastAction>
                 )
             });
@@ -81,8 +81,8 @@ function InviteUser({ chatId }: { chatId: string }) {
 
         if (querySnapshot.empty) {
             toast({
-                title: "User not Found",
-                description: "Please enter an email valid",
+                title: "usuário não encontrado",
+                description: "Por favor digite um email valido",
                 variant: "destructive",
             })
 
@@ -102,8 +102,8 @@ function InviteUser({ chatId }: { chatId: string }) {
 
 
                 toast({
-                    title: "Added to chat",
-                    description: "the user has been adeed blablabla",
+                    title: "Adicionado ao chat",
+                    description: "O usuário foi adicionado ao chat",
                     className: "bg-green-600 text-white",
                     duration: 3000,
                 })
@@ -111,8 +111,8 @@ function InviteUser({ chatId }: { chatId: string }) {
             })
                 .catch(() => {
                     toast({
-                        title: "Error",
-                        description: "Whoops...there was an error adding the user to the chat!",
+                        title: "Erro",
+                        description: "Ops... ocorreu um erro ao adicionar o usuário ao chat!",
                         variant: "destructive"
                     })
                 })
@@ -127,16 +127,16 @@ function InviteUser({ chatId }: { chatId: string }) {
                     <DialogTrigger asChild>
                         <Button>
                             <PlusCircleIcon className="mr-1" />
-                            Add User To Chat
+                            Adicionar Usuário ao chat
                         </Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-md">
                         <DialogHeader>
-                            <DialogTitle>Add User to Chat</DialogTitle>
+                            <DialogTitle>Adicionar Usuário ao chat</DialogTitle>
                             <DialogDescription>
-                                Simply enter another users email address to invite them to this chat!{" "}
+                                Basta inserir o endereço de e-mail de outro usuario para convida-lo para este chat!, {" "}
                                 <span className="text-indigo-600 font-bold">
-                                    (Note:the mus be registred)
+                                    (Nota: eles devem estar registrados.)
                                 </span>
                             </DialogDescription>
                         </DialogHeader>
@@ -157,7 +157,7 @@ function InviteUser({ chatId }: { chatId: string }) {
                                         </FormItem>
                                     )}
                                 />
-                                <Button className="ml-auto sm:w-fit w-full " type="submit">Add To chat</Button>
+                                <Button className="ml-auto sm:w-fit w-full " type="submit">Adicionar</Button>
                             </form>
                         </Form>
                     </DialogContent>
@@ -166,7 +166,7 @@ function InviteUser({ chatId }: { chatId: string }) {
                 <ShereLink
                     isOpen={openInviteLink}
                     setIsOpen={setOpenInviteLink}
-                                    chatId={chatId} />
+                    chatId={chatId} />
             </>
         )
     );
